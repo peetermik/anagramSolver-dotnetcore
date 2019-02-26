@@ -1,1 +1,2 @@
 This is an anagram solver written in .NET core 2.2
+Several times faster than java version https://github.com/peetermik/anagramSolverHashMap
