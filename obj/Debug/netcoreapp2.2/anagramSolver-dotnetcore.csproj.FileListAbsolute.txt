@@ -1,0 +1,11 @@
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/bin/Debug/netcoreapp2.2/anagramSolver-dotnetcore.deps.json
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/bin/Debug/netcoreapp2.2/anagramSolver-dotnetcore.runtimeconfig.json
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/bin/Debug/netcoreapp2.2/anagramSolver-dotnetcore.runtimeconfig.dev.json
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/bin/Debug/netcoreapp2.2/anagramSolver-dotnetcore.dll
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/bin/Debug/netcoreapp2.2/anagramSolver-dotnetcore.pdb
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/obj/Debug/netcoreapp2.2/anagramSolver-dotnetcore.csprojAssemblyReference.cache
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/obj/Debug/netcoreapp2.2/anagramSolver-dotnetcore.csproj.CoreCompileInputs.cache
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/obj/Debug/netcoreapp2.2/anagramSolver-dotnetcore.AssemblyInfoInputs.cache
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/obj/Debug/netcoreapp2.2/anagramSolver-dotnetcore.AssemblyInfo.cs
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/obj/Debug/netcoreapp2.2/anagramSolver-dotnetcore.dll
+/home/peeter/Documents/dotnetcore/anagramSolver-dotnetcore/obj/Debug/netcoreapp2.2/anagramSolver-dotnetcore.pdb
