@@ -26,11 +26,11 @@ namespace anagramSolver_dotnetcore
                 }
             }
             
-            //Calculate the vector lenght and character count for the original word.
+            //Calculate the vector lenght and character count of the original word.
             double originalVector = wordVector(word);
             var originalCharacters = wordChars(word);
 
-            //Read all lines from the anagram list. Lemmad.txt is encoded as windows-1257, let's use the same.
+            //Read all lines from the anagram list. 'lemmad.txt' is encoded as windows-1257, let's use the same.
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             var lines = File.ReadLines(fileName, Encoding.GetEncoding(1257));
 
@@ -60,7 +60,7 @@ namespace anagramSolver_dotnetcore
             {
                 temp += (int)ch * (int)ch;
             }
-            return temp;
+            return Math.Sqrt(temp);
         }
 
         // Create a <char, int> dictionary containing the count of every character in the input string.
