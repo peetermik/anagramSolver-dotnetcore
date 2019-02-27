@@ -15,7 +15,9 @@ namespace anagramSolver_dotnetcore
 
             string fileName = args[0];
             string word = args[1];
+            string output = "";
 
+            //If more than two arguments are provided, then add those to the search word.
             if (args.Length > 2)
             {
                 for (int i = 2; i < args.Length; i++)
@@ -23,18 +25,25 @@ namespace anagramSolver_dotnetcore
                     word += " " + args[i];
                 }
             }
-
-            string output = "";
+            
+            //Calculate the vector lenght and character count for the original word.
             double originalVector = wordVector(word);
             var originalCharacters = wordChars(word);
+
+            //Read all lines from the anagram list. Lemmad.txt is encoded as windows-1257, let's use the same.
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             var lines = File.ReadLines(fileName, Encoding.GetEncoding(1257));
+
             foreach (String line in lines)
             {
-                if (line.Length == word.Length && !line.Equals(word) && wordVector(line) == originalVector)
+                // If original word has the same lenght as current line on the anagram list, and
+                // word vectors have the same value, and the words aren't the same, then we might have an anagram.
+                if (line.Length == word.Length && wordVector(line) == originalVector && !line.Equals(word))
                 {
+                    // More detailed (and time expensive) check if the current line is an anagram of the search word.
                     if (areDictionariesEqual(wordChars(line), originalCharacters))
                     {
+                        //We have an anagram, add to output string.
                         output += "," + line;
                     }
                 }
@@ -42,7 +51,8 @@ namespace anagramSolver_dotnetcore
             stopwatch.Stop();
             Console.WriteLine("{0}{1}", stopwatch.ElapsedTicks * 1000000 / Stopwatch.Frequency, output);
         }
-
+        
+        // Calculate vector lenght of a string: square root of the sum of all character values squared.
         static double wordVector(String word)
         {
             long temp = 0;
@@ -53,6 +63,7 @@ namespace anagramSolver_dotnetcore
             return temp;
         }
 
+        // Create a <char, int> dictionary containing the count of every character in the input string.
         static Dictionary<char, int> wordChars(String word)
         {
             var temp = new Dictionary<char, int>(31);
@@ -65,6 +76,8 @@ namespace anagramSolver_dotnetcore
             return temp;
         }
 
+        // Check, if two <char, int> dictionaries are the same, e.g. they contain the same key-value pairs.
+        // No need to check for key counts, as this method will be called after checking string lenght equality.
         static bool areDictionariesEqual(Dictionary<char, int> d1, Dictionary<char, int> d2)
         {
             bool temp = true;
